@@ -8,6 +8,7 @@ const userRoutes = require('./router/user.route.js');
 const cookieParser = require('cookie-parser');
 const port = process.env.PORT || 4000;
 require('dotenv').config();
+
 app.use(express.json());
 app.use(cookieParser());
 app.use('/api/auth', authRoutes);

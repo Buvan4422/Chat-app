@@ -11,7 +11,7 @@ const convSchema = new mongoose.Schema(
     messages: [
       {
         type: mongoose.Schema.Types.ObjectId,
-        ref: 'Msgs',
+        ref: 'Message',
         default: [],
       },
     ],
