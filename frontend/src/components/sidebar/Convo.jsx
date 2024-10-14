@@ -1,17 +1,21 @@
+import { useSocketContext } from '../../context/SocketContext';
 import useConversation from '../../globalHooks/useConversation';
 const Convo = ({ conversation }) => {
   const { selectedConvo, setSelectedConvo } = useConversation();
-
   const isSelected = selectedConvo?._id === conversation._id;
+
+  const { online } = useSocketContext();
+  const isOnline = online.includes(conversation._id);
+
   return (
     <>
       <div
         className={`flex gap-2 items-center hover:bg-red-500 reounded p-2 py-1 cursor-pointer 
-          ${isSelected ? 'bg-red-500' : ''}
-      `}
+        ${isSelected ? 'bg-red-500' : ''}
+    `}
         onClick={() => setSelectedConvo(conversation)}
       >
-        <div className="avatar online">
+        <div className={`avatar ${isOnline ? 'online' : 'offline'}`}>
           <div className="w-12 rounded-full">
             <img src={conversation.profilepic} />
           </div>
