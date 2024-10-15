@@ -1,0 +1,35 @@
+/* App.css */
+.container {
+  width: 100%;
+  max-width: 1200px; /* Restricts container width on larger screens */
+  margin: 0 auto;
+  padding: 10px;
+}
+
+.sidebar {
+  width: 25%;
+  max-width: 300px;
+  background-color: #f9f9f9;
+  overflow: hidden;
+}
+
+.chat-list {
+  height: 100%;
+  overflow-y: auto;
+}
+
+@media (max-width: 768px) {
+  .container {
+    max-width: 100%;
+    padding: 5px;
+  }
+
+  .sidebar {
+    width: 100%;
+    max-width: none;
+  }
+
+  .chat-list {
+    height: auto;
+  }
+}
